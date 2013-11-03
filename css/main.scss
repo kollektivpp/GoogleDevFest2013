@@ -18,8 +18,9 @@ body {
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: top center;
-
+	
 	-webkit-filter: hue-rotate(0deg);
+	-webkit-filter: grayscale(80%);
 
 	&.disco {
 		-webkit-animation: bg-anim 1s infinite alternate;
