@@ -1,0 +1,18 @@
+<polymer-element name="test-element" attributes="owner color">
+
+    <template>
+        <p>owner: {{owner}}</p>
+        <p>color: {{color}}</p>
+    </template>
+
+    <script>
+        Polymer('test-element', {
+            owner: 'default',
+            color: 'default'
+            // ready: function() {
+            //     this.$.el.innerText = 'foobar';
+            // }
+        });
+    </script>
+
+</polymer-element>
