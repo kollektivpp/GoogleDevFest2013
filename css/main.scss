@@ -20,7 +20,10 @@ body {
 	background-position: top center;
 
 	-webkit-filter: hue-rotate(0deg);
-	// -webkit-animation: bg-anim 1s infinite alternate;
+
+	&.disco {
+		-webkit-animation: bg-anim 1s infinite alternate;
+	}
 }
 
 @-webkit-keyframes bg-anim {

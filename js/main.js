@@ -34,4 +34,12 @@ socket.on('button',function(msg) {
 
     // console.log(document.querySelector('body').style.backgroundColor);
     // document.querySelector('body').style.backgroundColor = 'rgb(' + id + ',' + id + ',' + id + ')';
-}.bind(this));
+});
+
+socket.on('disco', function(msg) {
+    if(msg.state) {
+        $('#bg-wrapper').className = ' disco';
+    } else {
+        $('#bg-wrapper').className = '';
+    }
+});

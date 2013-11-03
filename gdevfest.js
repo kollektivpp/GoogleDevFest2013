@@ -2,6 +2,8 @@
 var app       = require('http').createServer(),
     io        = require('socket.io').listen(app),
     arduino   = require('duino'),
+    express   = require('express'),
+    api       = express(),
     board     = new arduino.Board({ debug: true, baudrate: 9600 }),
     sockets   = [];
 
@@ -23,5 +25,20 @@ var dataHandler = function(data) {
 
 };
 
+api.get('/disco/on', function(req, res){
+    res.send('disco time!');
+    sockets.forEach(function(socket) {
+        socket.emit('disco', {state: true});
+    });
+});
+
+api.get('/disco/off', function(req, res){
+    res.send('noooo disco time!');
+    sockets.forEach(function(socket) {
+        socket.emit('disco', {state: false});
+    });
+});
+
+api.listen(9000);
 app.listen(8000);
 board.on('data', dataHandler);
