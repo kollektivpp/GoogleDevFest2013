@@ -30,6 +30,7 @@ body {
 
 #dancer {
 	position: relative;
+	top: 200px;
 	width: 200px;
 	margin: 0 auto;
 
@@ -85,10 +86,6 @@ body {
 		&.down {
 			top: 15px;
 		}
-
-		// &.animate {
-		// 	-webkit-animation: head-anim .3s infinite alternate;
-		// }
 	}
 
 	x-throat {
