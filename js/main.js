@@ -1,3 +1,8 @@
+music = new Audio('./music/dnb.mp3');
+music.loop = true;
+music.play();
+
+
 var socket = io.connect('http://localhost:8000'),
     buttons = {
         b:      [62,94,110,118,126],
@@ -8,6 +13,7 @@ var socket = io.connect('http://localhost:8000'),
         right:  [63],
         bottom: [111]
     };
+
 
 socket.on('button',function(msg) {
     var id = msg.id;
@@ -34,4 +40,12 @@ socket.on('button',function(msg) {
 
     // console.log(document.querySelector('body').style.backgroundColor);
     // document.querySelector('body').style.backgroundColor = 'rgb(' + id + ',' + id + ',' + id + ')';
-}.bind(this));
+});
+
+socket.on('disco', function(msg) {
+    if(msg.state) {
+        $('#bg-wrapper').className = ' disco';
+    } else {
+        $('#bg-wrapper').className = '';
+    }
+});
