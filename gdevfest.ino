@@ -78,13 +78,21 @@ void loop() {
   Serial.print(output, DEC);
   Serial.println(F("}"));
 
-  if (output != 127) {
+  if (output == 126 || output == 118 || output == 110 || output == 94 || output == 62) {
     digitalWrite(LED_red, HIGH);
-    digitalWrite(LED_green, HIGH);
-    digitalWrite(LED_yellow, HIGH);
   } else {
     digitalWrite(LED_red, LOW);
+  }
+
+  if (output == 125 || output == 117 || output == 109 || output == 93 || output == 61 || output == 123 || output == 115 || output == 107 || output == 91 || output == 59) {
+    digitalWrite(LED_green, HIGH);
+  } else {
     digitalWrite(LED_green, LOW);
+  }
+
+  if (output == 119 || output == 111 || output == 95 || output == 63) {
+    digitalWrite(LED_yellow, HIGH);
+  } else {
     digitalWrite(LED_yellow, LOW);
   }
    
