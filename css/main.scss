@@ -95,9 +95,7 @@ body {
 	}
 
 	x-corpus {
-		&.animate {
-			-webkit-animation: corpus-shake 2s infinite;
-		}
+		-webkit-animation: corpus-shake 1.3s infinite;
 	}
 
 	x-arm {
