@@ -48,7 +48,9 @@ const int data  = 7;
 const int latch = 8;
 const int clock = 9;
 
-const int LED_green = 4;
+const int LED_red    = 3;
+const int LED_green  = 4;
+const int LED_yellow = 5;
 
 #define latchlow digitalWrite(latch, LOW)
 #define latchhigh digitalWrite(latch, HIGH)
@@ -64,7 +66,9 @@ void setup() {
   pinMode(latch, OUTPUT);
   pinMode(clock, OUTPUT);
   pinMode(data, INPUT);
-  pinMode(LED_green, OUTPUT); 
+  pinMode(LED_red, OUTPUT);
+  pinMode(LED_green, OUTPUT);
+  pinMode(LED_yellow, OUTPUT);
 }
 
 void loop() {
@@ -75,9 +79,13 @@ void loop() {
   Serial.println(F("}"));
 
   if (output != 127) {
-    digitalWrite(LED_green, HIGH); 
+    digitalWrite(LED_red, HIGH);
+    digitalWrite(LED_green, HIGH);
+    digitalWrite(LED_yellow, HIGH);
   } else {
+    digitalWrite(LED_red, LOW);
     digitalWrite(LED_green, LOW);
+    digitalWrite(LED_yellow, LOW);
   }
    
   delay(50);
@@ -98,6 +106,7 @@ void ReadNESjoy() {
      wait;
   }
 }
+
 
 
 

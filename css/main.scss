@@ -47,10 +47,12 @@ body {
 		&.left {
 			left: 20px;
 			-webkit-transform: rotateZ(45deg);
+			background: url(../images/left_hand.png) no-repeat;
 		}
 		&.right {
 			right: 20px;
 			-webkit-transform: rotateZ(-45deg);
+			background: url(../images/right_hand.png) no-repeat;
 		}
 	}
 
@@ -58,10 +60,14 @@ body {
 		&.left {
 			float: left;
 			margin-left: 35px;
+			background: url(../images/left_foot.png) no-repeat;
+			background-position: -10px 0;
 		}
 		&.right {
 			float: right;
 			margin-right: 35px;
+			background: url(../images/right_foot.png) no-repeat;
+			background-position: -10px 0;
 		}
 	}
 }
