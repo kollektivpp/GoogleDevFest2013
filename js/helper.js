@@ -6,4 +6,15 @@ Array.prototype.contains = function(obj) {
         }
     }
     return false;
-}
+};
+
+var $ = function(selector) {
+	return document.querySelector(selector);
+};
+
+var makeMove = function(elem,cssClass) {
+	elem.className += ' ' + cssClass;
+    setTimeout(function() {
+        elem.className = elem.className.replace(' ' + cssClass,'');
+    },150);
+};

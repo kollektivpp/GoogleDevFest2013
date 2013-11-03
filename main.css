@@ -31,10 +31,22 @@ body {
     position: absolute;
     top: 150px;
     z-index: 90;
-    -webkit-transform-origin: top; }
+    -webkit-transform-origin: top;
+    -webkit-transition-duration: 0.15s; }
     #dancer x-arm.left {
       left: 20px;
+<<<<<<< HEAD:main.css
       -webkit-transform: rotateZ(45deg); }
+=======
+      -webkit-transform: rotateZ(15deg);
+      background: url(../images/left_hand.png) no-repeat; }
+      #dancer x-arm.left.up {
+        -webkit-transform: rotateZ(165deg); }
+      #dancer x-arm.left.middle {
+        -webkit-transform: rotateZ(105deg); }
+      #dancer x-arm.left.down {
+        -webkit-transform: rotateZ(45deg); }
+>>>>>>> added first move actions:css/main.css
     #dancer x-arm.right {
       right: 20px;
       -webkit-transform: rotateZ(-45deg); }

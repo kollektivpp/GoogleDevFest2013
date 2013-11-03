@@ -62,11 +62,24 @@ body {
 		top: 150px;
 		z-index: 90;
 		-webkit-transform-origin: top;
+		-webkit-transition-duration: 0.15s;
 
 		&.left {
 			left: 20px;
-			-webkit-transform: rotateZ(45deg);
+			-webkit-transform: rotateZ(15deg);
 			background: url(../images/left_hand.png) no-repeat;
+
+			&.up {
+				-webkit-transform: rotateZ(165deg);
+			}
+
+			&.middle {
+				-webkit-transform: rotateZ(105deg);
+			}
+
+			&.down {
+				-webkit-transform: rotateZ(45deg);
+			}
 		}
 		&.right {
 			right: 20px;
