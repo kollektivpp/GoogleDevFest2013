@@ -25,14 +25,39 @@ socket.on('button',function(msg) {
 
             if(id === 118) {
                 makeMove($('x-arm.left'),'up');
+                makeMove($('x-arm.right'),'up');
             }
-
             if(id === 94) {
                 makeMove($('x-arm.left'),'middle');
             }
-
+            if(id === 62) {
+                makeMove($('x-arm.right'),'middle');
+            }
             if(id === 110) {
                 makeMove($('x-arm.left'),'down');
+                makeMove($('x-arm.right'),'down');
+            }
+
+            if(id === 115) {
+                makeMove($('x-head'),'up');
+            }
+
+            if(id === 93) {
+                makeMove($('x-leg.left'),'topleft');
+            }
+
+            if(id === 61) {
+                makeMove($('x-leg.right'),'topright');
+            }
+
+            if(id === 117) {
+                makeMove($('x-leg.right'),'topright');
+                makeMove($('x-leg.left'),'topright');
+            }
+
+            if(id === 109) {
+                makeMove($('x-leg.right'),'topleft');
+                makeMove($('x-leg.left'),'topleft');
             }
 
         }
@@ -45,8 +70,10 @@ socket.on('button',function(msg) {
 socket.on('disco', function(msg) {
     if(msg.state) {
         $('#bg-wrapper').className = ' disco';
+        $('#dancer').className = ' disco';
         soul.createStaticSound({"volume":75,"panning":0,"pitch":608,"character":0,"fatness":0,"noise":0,"damping":0,"attack":0,"release":0,"modulation":true,"delayTime":0,"delayVolume":50,"delayRepeat":false,"reverbTime":0,"reverbSpeed":50,"duration":4152,"bang":false,"timePitch1":false,"timePitch2":false,"sequence":true,"sequenceObjects":[{"pitch":568,"duration":2},{"pitch":593,"duration":2},{"pitch":568,"duration":2},{"pitch":608,"duration":3},{"pitch":593,"duration":13},{"pitch":20,"duration":1},{"pitch":593,"duration":4},{"pitch":585,"duration":4},{"pitch":568,"duration":4}],"modPitch":true,"modVolume":false,"modDamping":false,"modIntensity":2,"modSpeed":97,"modCharacter":1}).play();
     } else {
         $('#bg-wrapper').className = '';
+        $('#dancer').className = '';
     }
 });
