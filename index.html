@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- 1. Load Polymer before any code that touches the DOM. -->
+        <!-- include CSS -->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+
+        <!-- include Polymer -->
         <script src="bower_components/polymer/polymer.min.js"></script>
 
-        <!-- 2. Load a component -->
-        <link rel="import" href="test-element.html">
+        <!-- Load components -->
+        <link rel="import" href="elements/head-element.html">
+        <link rel="import" href="elements/throat-element.html">
+        <link rel="import" href="elements/corpus-element.html">
+        <link rel="import" href="elements/arm-element.html">
+        <link rel="import" href="elements/leg-element.html">
+
     </head>
     <body>
-        <!-- 3. Declare the component by its tag. -->
-        <test-element owner="blah" color="orange"></test-element>
+        <section id="dancer">
+            <x-head></x-head>
+            <x-throat></x-throat>
+            <x-corpus></x-corpus>
+            <x-arm class="left"></x-arm>
+            <x-arm class="right"></x-arm>
+            <x-leg class="left"></x-leg>
+            <x-leg class="right"></x-leg>
+        </section>
+        
     </body>
 </html>

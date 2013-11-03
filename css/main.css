@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  width: 70%;
+  margin: 20px auto; }
+
+#dancer {
+  position: relative;
+  width: 200px;
+  margin: 0 auto; }
+  #dancer:after {
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0; }
+  #dancer x-head, #dancer x-throat, #dancer x-corpus, #dancer x-arm, #dancer x-leg {
+    margin: 0 auto;
+    z-index: 100; }
+  #dancer x-arm {
+    position: absolute;
+    top: 150px;
+    z-index: 90;
+    -webkit-transform-origin: top; }
+    #dancer x-arm.left {
+      left: 20px;
+      -webkit-transform: rotateZ(45deg); }
+    #dancer x-arm.right {
+      right: 20px;
+      -webkit-transform: rotateZ(-45deg); }
+  #dancer x-leg.left {
+    float: left;
+    margin-left: 30px; }
+  #dancer x-leg.right {
+    float: right;
+    margin-right: 30px; }
+
+/*# sourceMappingURL=main.css.map */
