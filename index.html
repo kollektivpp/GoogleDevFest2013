@@ -7,7 +7,7 @@
         <!-- include Polymer -->
         <script src="bower_components/polymer/polymer.min.js"></script>
 
-        <!-- Load components -->
+        <!-- include components -->
         <link rel="import" href="elements/head-element.html">
         <link rel="import" href="elements/throat-element.html">
         <link rel="import" href="elements/corpus-element.html">
@@ -26,44 +26,9 @@
             <x-leg class="right"></x-leg>
         </section>
 
+        
         <script src="http://localhost:8000/socket.io/socket.io.js"></script>
-        <script>
-
-            Array.prototype.contains = function(obj) {
-                var i = this.length;
-                while (i--) {
-                    if (this[i] === obj) {
-                        return true;
-                    }
-                }
-                return false;
-            }
-
-            var socket = io.connect('http://localhost:8000'),
-                buttons = {
-                    b:      [62,94,110,118,126],
-                    start:  [59,91,107,115,123],
-                    select: [61,93,109,117,125],
-                    left:   [95],
-                    top:    [119],
-                    right:  [63],
-                    bottom: [111]
-                };
-
-
-            socket.on('button',function(msg) {
-                var id = msg.id;
-
-                for(button in buttons) {
-                    if(buttons[button].contains(id)) {
-                        console.log(button);
-                    }
-                }
-
-                // console.log(document.querySelector('body').style.backgroundColor);
-                // document.querySelector('body').style.backgroundColor = 'rgb(' + id + ',' + id + ',' + id + ')';
-            }.bind(this));
-
-        </script>
+        <script src="js/helper.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>
