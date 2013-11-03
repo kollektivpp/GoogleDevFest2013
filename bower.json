@@ -1,0 +1,25 @@
+{
+  "name": "GDGDevFest",
+  "version": "0.0.1",
+  "homepage": "https://github.com/kollektivpp/GoogleDevFest2013",
+  "authors": [
+    "The BroMan",
+    "Thomas Fett",
+    "Gernot Labahn"
+  ],
+  "description": "Basic Polymer for the GDG DevFest Berlin",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "0.0.x",
+    "polymer-elements": "0.0.x",
+    "polymer-ui-elements": "0.0.x"
+  }
+}
