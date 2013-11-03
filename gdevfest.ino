@@ -1,12 +1,19 @@
 /*
 
+---- CONTROLLER ----
 GND - white
 clock - yellow - D9
 strobe - orange - D8
 data - black - D7
-
 +5V - blue
+--------------------
 
+---- BLUETOOTH -----
+TX  - blue
+RX  - brown
+GND - orange
++3V - purple
+--------------------
 
 95 left
 119 top
@@ -31,18 +38,17 @@ data - black - D7
 110 B + bottom
 94  B + left
 
- */
-
-/*
-Description:	Interfacing a NES controller with a PC with an Arduino.
-Coded by:	Prodigity
-Date:		1 December 2011
-Revision:	V0.92 (beta)
+Description:  Interfacing a NES controller with a PC with an Arduino.
+Coded by: Prodigity
+Date:   1 December 2011
+Revision: V0.92 (beta)
 */
 
 const int data  = 7;
 const int latch = 8;
 const int clock = 9;
+
+const int LED_green = 4;
 
 #define latchlow digitalWrite(latch, LOW)
 #define latchhigh digitalWrite(latch, HIGH)
@@ -54,18 +60,26 @@ const int clock = 9;
 byte output;
 
 void setup() {
-	Serial.begin(9600);
-	pinMode(latch, OUTPUT);
+  Serial.begin(9600);
+  pinMode(latch, OUTPUT);
   pinMode(clock, OUTPUT);
   pinMode(data, INPUT);
+  pinMode(LED_green, OUTPUT); 
 }
 
 void loop() {
   output = 0;
   ReadNESjoy();
-  Serial.print(F("%1%{\"id\":"));
+  Serial.print(F("{\"id\":"));
   Serial.print(output, DEC);
-  Serial.println(F("}1%1"));
+  Serial.println(F("}"));
+
+  if (output != 127) {
+    digitalWrite(LED_green, HIGH); 
+  } else {
+    digitalWrite(LED_green, LOW);
+  }
+   
   delay(50);
 }
 
@@ -84,4 +98,6 @@ void ReadNESjoy() {
      wait;
   }
 }
+
+
 
