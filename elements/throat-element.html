@@ -1,0 +1,24 @@
+<polymer-element name="x-throat">
+
+    <template>
+        <style>
+            :host {
+                display: block;
+                width: 15px;
+                height: 20px;
+                background-color: green;
+            }
+        </style>
+        <article id="throat">
+        </article>
+    </template>
+
+    <script>
+        Polymer('x-throat', {
+            ready: function() {
+                console.log('throat element constructed!');
+            }
+        });
+    </script>
+
+</polymer-element>

@@ -1,0 +1,29 @@
+<polymer-element name="x-head">
+
+    <template>
+        <style>
+            :host {
+                display: block;
+                width: 100px;
+                height: 100px;
+                border-radius: 50px;
+                background-color: red;
+            }
+        </style>
+        <article id="head">
+            <div class="hair"></div>
+            <div class="eyes"></div>
+            <div class="nose"></div>
+            <div class="mouse"></div>
+        </article>
+    </template>
+
+    <script>
+        Polymer('x-head', {
+            ready: function() {
+                console.log('head element constructed!');
+            }
+        });
+    </script>
+
+</polymer-element>

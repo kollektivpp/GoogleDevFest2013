@@ -1,0 +1,24 @@
+<polymer-element name="x-arm">
+
+    <template>
+        <style>
+            :host {
+                display: block;
+                width: 25px;
+                height: 100px;
+                background-color: yellow;
+            }
+        </style>
+
+        <article id="arm"></article>
+    </template>
+
+    <script>
+        Polymer('x-arm', {
+            ready: function() {
+                console.log('arm element constructed!');
+            }
+        });
+    </script>
+
+</polymer-element>
