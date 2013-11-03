@@ -1,3 +1,8 @@
+music = new Audio('./music/dnb.mp3');
+music.loop = true;
+music.play();
+
+
 var socket = io.connect('http://localhost:8000'),
     buttons = {
         b:      [62,94,110,118,126],
@@ -8,6 +13,7 @@ var socket = io.connect('http://localhost:8000'),
         right:  [63],
         bottom: [111]
     };
+
 
 socket.on('button',function(msg) {
     var id = msg.id;
