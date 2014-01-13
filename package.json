@@ -1,0 +1,23 @@
+{
+  "name": "GoogleDevFest2013",
+  "version": "0.0.2",
+  "description": "Control an Android KitKat figure with a Nintendo NES controller (hackathon project for the Google DevFest 2013 in Berlin)",
+  "main": "gdevfest.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kollektivpp/GoogleDevFest2013.git"
+  },
+  "author": "Gernot Labahn, Thomass Fett, Christian Bromann",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/kollektivpp/GoogleDevFest2013/issues"
+  },
+  "dependencies": {
+    "bluetooth-serial-port": "1.0.5",
+    "socket.io": "0.9.16",
+    "express": "3.4.7"
+  }
+}
