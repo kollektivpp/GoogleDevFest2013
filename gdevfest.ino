@@ -66,9 +66,6 @@ void setup() {
   pinMode(latch, OUTPUT);
   pinMode(clock, OUTPUT);
   pinMode(data, INPUT);
-  pinMode(LED_red, OUTPUT);
-  pinMode(LED_green, OUTPUT);
-  pinMode(LED_yellow, OUTPUT);
 }
 
 void loop() {
@@ -78,24 +75,9 @@ void loop() {
   Serial.print(output, DEC);
   Serial.println(F("}"));
 
-  if (output == 126 || output == 118 || output == 110 || output == 94 || output == 62) {
-    digitalWrite(LED_red, HIGH);
-  } else {
-    digitalWrite(LED_red, LOW);
-  }
-
-  if (output == 125 || output == 117 || output == 109 || output == 93 || output == 61 || output == 123 || output == 115 || output == 107 || output == 91 || output == 59) {
-    digitalWrite(LED_green, HIGH);
-  } else {
-    digitalWrite(LED_green, LOW);
-  }
-
-  if (output == 119 || output == 111 || output == 95 || output == 63) {
-    digitalWrite(LED_yellow, HIGH);
-  } else {
-    digitalWrite(LED_yellow, LOW);
-  }
-   
+  digitalWrite(13, HIGH);
+  delay(50);
+  digitalWrite(13, LOW);
   delay(50);
 }
 
