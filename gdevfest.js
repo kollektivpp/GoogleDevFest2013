@@ -48,23 +48,12 @@ serial.on('found', function(address, name) {
             serial.on('data', function(data) {
 
                 data = data.toString('utf-8');
+                buffer += data;
 
-                if(data[0] === '{') {
+                if(buffer.indexOf('}') >= 0) {
                     sendChunk(buffer.replace(/\r\n/,''));
                     buffer = '';
                 }
-
-                buffer += data;
-
-                try {
-                    msg = JSON.parse(data);
-                } catch(e) {
-                    return;
-                }
-
-                sockets.forEach(function(socket) {
-                    socket.emit('button', msg);
-                });
 
             });
 

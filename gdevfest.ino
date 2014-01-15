@@ -37,6 +37,8 @@ GND - orange
 62  B + right
 110 B + bottom
 94  B + left
+122 B + start
+124 B + select
 
 Description:  Interfacing a NES controller with a PC with an Arduino.
 Coded by: Prodigity
@@ -71,9 +73,12 @@ void setup() {
 void loop() {
   output = 0;
   ReadNESjoy();
-  Serial.print(F("{\"id\":"));
-  Serial.print(output, DEC);
-  Serial.println(F("}"));
+
+  if (output != 127) {
+    Serial.print(F("{\"id\":"));
+    Serial.print(output, DEC);
+    Serial.println(F("}"));
+  }
 
   digitalWrite(13, HIGH);
   delay(50);
