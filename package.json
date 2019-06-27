@@ -18,6 +18,6 @@
   "dependencies": {
     "bluetooth-serial-port": "1.0.5",
     "socket.io": "0.9.16",
-    "express": "3.4.7"
+    "express": ">=3.11.0"
   }
 }
